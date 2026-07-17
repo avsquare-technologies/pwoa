@@ -1,0 +1,15 @@
+{
+    "name": "xahau-node-signer",
+    "version": "1.0.0",
+    "type": "module",
+    "private": true,
+    "description": "Local-only XRPL/Xahau transaction signer for Laravel",
+    "main": "sign.js",
+    "scripts": {
+        "sign": "node sign.js"
+    },
+    "dependencies": {
+        "xrpl": "^4.0.0",
+        "xahau":"4.0.0"
+    }
+}

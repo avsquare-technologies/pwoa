@@ -1,0 +1,398 @@
+<?php
+
+namespace App\Support;
+
+use Carbon\Carbon;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Fluent;
+
+class DemoCatalog
+{
+    public static function contractors(): Collection
+    {
+        return collect([
+            new Fluent([
+                'id' => 1,
+                'business_name' => 'BlueLine Surface Pros',
+                'slug' => 'blueline-surface-pros',
+                'membership_tier' => 'gold',
+                'is_active' => true,
+                'is_featured' => true,
+                'is_verified' => true,
+                'is_pwoa_certified' => true,
+                'service_types' => ['commercial', 'industrial', 'fleet-washing'],
+                'phone' => '(404) 555-0112',
+                'email' => 'hello@bluelinepros.test',
+                'website' => 'https://example.com/blueline',
+                'city' => 'Atlanta',
+                'state' => 'GA',
+                'zip' => '30303',
+                'service_radius' => 120,
+                'logo' => null,
+                'description' => 'Commercial and industrial washing team specializing in fleet accounts, retail centers, and multi-site maintenance.',
+                'services' => ['Fleet washing', 'Storefront cleaning', 'Concrete restoration', 'Night crew service'],
+                'gallery' => [],
+                'certifications' => collect([new Fluent(['name' => 'PWOA Certified Operator'])]),
+                'avg_rating' => 4.8,
+                'reviews_count' => 42,
+            ]),
+            new Fluent([
+                'id' => 2,
+                'business_name' => 'Evergreen SoftWash',
+                'slug' => 'evergreen-softwash',
+                'membership_tier' => 'standard',
+                'is_active' => true,
+                'is_featured' => false,
+                'is_verified' => true,
+                'is_pwoa_certified' => true,
+                'service_types' => ['residential', 'soft-washing', 'roof-washing'],
+                'phone' => '(919) 555-0188',
+                'email' => 'team@evergreensoftwash.test',
+                'website' => 'https://example.com/evergreen',
+                'city' => 'Raleigh',
+                'state' => 'NC',
+                'zip' => '27601',
+                'service_radius' => 45,
+                'logo' => null,
+                'description' => 'Residential specialists focused on roofs, siding, patios, and delicate soft-wash applications.',
+                'services' => ['Roof washing', 'House wash', 'Patio cleaning'],
+                'gallery' => [],
+                'certifications' => collect([new Fluent(['name' => 'Soft Wash Safety Certificate'])]),
+                'avg_rating' => 4.6,
+                'reviews_count' => 28,
+            ]),
+            new Fluent([
+                'id' => 3,
+                'business_name' => 'Summit Wash & Seal',
+                'slug' => 'summit-wash-seal',
+                'membership_tier' => 'gold',
+                'is_active' => true,
+                'is_featured' => true,
+                'is_verified' => true,
+                'is_pwoa_certified' => false,
+                'service_types' => ['residential', 'commercial', 'driveway'],
+                'phone' => '(615) 555-0147',
+                'email' => 'ops@summitwash.test',
+                'website' => 'https://example.com/summit',
+                'city' => 'Nashville',
+                'state' => 'TN',
+                'zip' => '37201',
+                'service_radius' => 60,
+                'logo' => null,
+                'description' => 'Wash, seal, and restore surfaces for homes, HOAs, and commercial properties.',
+                'services' => ['Concrete sealing', 'Driveway cleaning', 'Building wash'],
+                'gallery' => [],
+                'certifications' => collect(),
+                'avg_rating' => 4.7,
+                'reviews_count' => 19,
+            ]),
+        ]);
+    }
+
+    public static function vendors(): Collection
+    {
+        return collect([
+            new Fluent([
+                'id' => 1,
+                'business_name' => 'HydroFlow Supply Co.',
+                'slug' => 'hydroflow-supply-co',
+                'vendor_type' => 'suppliers',
+                'membership_tier' => 'gold',
+                'is_active' => true,
+                'is_featured' => true,
+                'ships_nationwide' => true,
+                'phone' => '(888) 555-1001',
+                'email' => 'sales@hydroflow.test',
+                'website' => 'https://example.com/hydroflow',
+                'city' => 'Dallas',
+                'state' => 'TX',
+                'zip' => '75201',
+                'tagline' => 'Professional rigs, hoses, reels, and accessories for field-ready crews.',
+                'description' => 'HydroFlow supplies pressure washing rigs, fittings, pumps, trailers, and fleet-ready replenishment programs.',
+                'products_services' => ['Rig builds', 'Hose reels', 'Pumps', 'Bulk ordering'],
+                'gallery' => [],
+                'logo' => null,
+                'facebook_url' => null,
+                'instagram_url' => null,
+                'linkedin_url' => null,
+                'youtube_url' => null,
+            ]),
+            new Fluent([
+                'id' => 2,
+                'business_name' => 'FoamLab Chemicals',
+                'slug' => 'foamlab-chemicals',
+                'vendor_type' => 'manufacturers',
+                'membership_tier' => 'standard',
+                'is_active' => true,
+                'is_featured' => false,
+                'ships_nationwide' => true,
+                'phone' => '(303) 555-2234',
+                'email' => 'support@foamlab.test',
+                'website' => 'https://example.com/foamlab',
+                'city' => 'Denver',
+                'state' => 'CO',
+                'zip' => '80202',
+                'tagline' => 'Low-residue detergents built for residential and commercial crews.',
+                'description' => 'Manufacturer of surfactants, degreasers, and house wash blends with compliance-ready SDS support.',
+                'products_services' => ['House wash', 'Degreasers', 'Surface cleaner soap'],
+                'gallery' => [],
+                'logo' => null,
+                'facebook_url' => null,
+                'instagram_url' => null,
+                'linkedin_url' => null,
+                'youtube_url' => null,
+            ]),
+            new Fluent([
+                'id' => 3,
+                'business_name' => 'WashMart Retail',
+                'slug' => 'washmart-retail',
+                'vendor_type' => 'retail-shops',
+                'membership_tier' => 'gold',
+                'is_active' => true,
+                'is_featured' => true,
+                'ships_nationwide' => false,
+                'phone' => '(602) 555-3003',
+                'email' => 'hello@washmart.test',
+                'website' => 'https://example.com/washmart',
+                'city' => 'Phoenix',
+                'state' => 'AZ',
+                'zip' => '85004',
+                'tagline' => 'Walk-in retail plus contractor support for fast-moving wash supplies.',
+                'description' => 'Retail showroom with contractor pricing, hose repair, accessories, and same-day pickup.',
+                'products_services' => ['Retail parts', 'Nozzles', 'Surface cleaners', 'Pickup orders'],
+                'gallery' => [],
+                'logo' => null,
+                'facebook_url' => null,
+                'instagram_url' => null,
+                'linkedin_url' => null,
+                'youtube_url' => null,
+            ]),
+        ]);
+    }
+
+    public static function events(): Collection
+    {
+        return collect([
+            new Fluent([
+                'id' => 1,
+                'title' => 'PWOA Growth Summit 2026',
+                'slug' => 'pwoa-growth-summit-2026',
+                'category' => 'conference',
+                'status' => 'published',
+                'start_date' => Carbon::now()->addWeeks(3)->setTime(9, 0),
+                'end_date' => Carbon::now()->addWeeks(3)->setTime(17, 0),
+                'is_virtual' => false,
+                'location' => 'Nashville, TN',
+                'venue_name' => 'Music City Convention Center',
+                'virtual_link' => null,
+                'organizer_name' => 'PWOA National Team',
+                'thumbnail' => null,
+                'description' => 'A full-day event on operations, hiring, pricing, compliance, and growth systems for pressure washing businesses.',
+                'description_html' => null,
+                'is_free' => false,
+                'ticket_price' => 149,
+                'capacity' => 250,
+                'tickets_sold' => 118,
+                'has_nft_tickets' => true,
+                'nft_token_price' => 1050,
+                'nft_contract_address' => '0x1234567890abcdef',
+                'ticket_tiers' => [
+                    ['id' => 1, 'name' => 'Standard', 'description' => 'General admission', 'price' => 149, 'token_price' => 1050, 'quantity' => 200],
+                    ['id' => 2, 'name' => 'VIP', 'description' => 'Priority seating + mixer', 'price' => 299, 'token_price' => 2200, 'quantity' => 50],
+                ],
+                'agenda' => [
+                    ['time' => '9:00 AM', 'title' => 'Keynote: State of the Industry', 'speaker' => 'Mia Reynolds'],
+                    ['time' => '11:30 AM', 'title' => 'Pricing for Margin', 'speaker' => 'Theo Carter'],
+                ],
+                'speakers' => [
+                    ['name' => 'Mia Reynolds', 'title' => 'Executive Director, PWOA'],
+                    ['name' => 'Theo Carter', 'title' => 'Commercial Operations Consultant'],
+                ],
+            ]),
+            new Fluent([
+                'id' => 2,
+                'title' => 'Environmental Compliance Workshop',
+                'slug' => 'environmental-compliance-workshop',
+                'category' => 'workshop',
+                'status' => 'published',
+                'start_date' => Carbon::now()->addDays(10)->setTime(13, 0),
+                'end_date' => Carbon::now()->addDays(10)->setTime(16, 30),
+                'is_virtual' => true,
+                'location' => null,
+                'venue_name' => null,
+                'virtual_link' => 'https://example.com/live/workshop',
+                'organizer_name' => 'PWOA Education',
+                'thumbnail' => null,
+                'description' => 'Hands-on virtual workshop covering reclaim, wastewater rules, recordkeeping, and client communication.',
+                'description_html' => null,
+                'is_free' => true,
+                'ticket_price' => 0,
+                'capacity' => 500,
+                'tickets_sold' => 186,
+                'has_nft_tickets' => false,
+                'nft_token_price' => null,
+                'nft_contract_address' => null,
+                'ticket_tiers' => [],
+                'agenda' => [],
+                'speakers' => [],
+            ]),
+            new Fluent([
+                'id' => 3,
+                'title' => 'Winter Vendor Showcase',
+                'slug' => 'winter-vendor-showcase',
+                'category' => 'networking',
+                'status' => 'completed',
+                'start_date' => Carbon::now()->subMonths(2)->setTime(10, 0),
+                'end_date' => Carbon::now()->subMonths(2)->setTime(15, 0),
+                'is_virtual' => false,
+                'location' => 'Orlando, FL',
+                'venue_name' => 'Lakefront Expo Hall',
+                'virtual_link' => null,
+                'organizer_name' => 'PWOA Vendor Relations',
+                'thumbnail' => null,
+                'description' => 'An in-person networking event connecting contractors with manufacturers, suppliers, and retail partners.',
+                'description_html' => null,
+                'is_free' => false,
+                'ticket_price' => 49,
+                'capacity' => 180,
+                'tickets_sold' => 180,
+                'has_nft_tickets' => false,
+                'nft_token_price' => null,
+                'nft_contract_address' => null,
+                'ticket_tiers' => [],
+                'agenda' => [],
+                'speakers' => [],
+            ]),
+        ]);
+    }
+
+    public static function certificationTracks(): Collection
+    {
+        return collect([
+            new Fluent([
+                'slug' => 'certified-operator',
+                'name' => 'PWOA Certified Operator',
+                'description' => 'Foundational credential for pressure washing operators focused on safety, cleaning science, and field professionalism.',
+                'courses_count' => 4,
+                'renewal_years' => 2,
+            ]),
+            new Fluent([
+                'slug' => 'commercial-specialist',
+                'name' => 'Commercial Specialist',
+                'description' => 'Advanced training for fleets, commercial sites, property managers, and multi-site service contracts.',
+                'courses_count' => 3,
+                'renewal_years' => 2,
+            ]),
+            new Fluent([
+                'slug' => 'environmental-compliance',
+                'name' => 'Environmental Compliance',
+                'description' => 'Focused credential for reclaim strategy, wastewater handling, and environmental documentation.',
+                'courses_count' => 2,
+                'renewal_years' => 1,
+            ]),
+        ]);
+    }
+
+    public static function courses(): Collection
+    {
+        return collect([
+            new Fluent([
+                'id' => 1,
+                'slug' => 'wash-safety-fundamentals',
+                'title' => 'Wash Safety Fundamentals',
+                'category' => 'safety',
+                'status' => 'published',
+                'is_free' => true,
+                'price' => 0,
+                'token_price' => 0,
+                'access_level' => 'all',
+                'is_required_for_certification' => true,
+                'duration_hours' => 1,
+                'duration_minutes' => 20,
+                'description' => 'Core field safety training for crews, ladders, PPE, and chemical handling.',
+                'thumbnail' => null,
+                'learning_outcomes' => "Recognize jobsite hazards\nUse PPE correctly\nDocument safety checks",
+                'has_exam' => true,
+                'passing_score' => 80,
+                'exam_attempts_allowed' => 3,
+                'certificate_name' => 'Safety Fundamentals Certificate',
+                'lessons_count' => 5,
+                'enrollments' => collect(),
+            ]),
+            new Fluent([
+                'id' => 2,
+                'slug' => 'commercial-bidding-and-pricing',
+                'title' => 'Commercial Bidding & Pricing',
+                'category' => 'business',
+                'status' => 'published',
+                'is_free' => false,
+                'price' => 79,
+                'token_price' => 550,
+                'access_level' => 'standard',
+                'is_required_for_certification' => false,
+                'duration_hours' => 2,
+                'duration_minutes' => 10,
+                'description' => 'Frameworks for proposals, scopes, pricing, and margin control in commercial work.',
+                'thumbnail' => null,
+                'learning_outcomes' => "Build scoped proposals\nProtect margin\nCreate upsell paths",
+                'has_exam' => false,
+                'passing_score' => null,
+                'exam_attempts_allowed' => null,
+                'certificate_name' => null,
+                'lessons_count' => 7,
+                'enrollments' => collect(),
+            ]),
+            new Fluent([
+                'id' => 3,
+                'slug' => 'wastewater-compliance-essentials',
+                'title' => 'Wastewater Compliance Essentials',
+                'category' => 'compliance',
+                'status' => 'published',
+                'is_free' => false,
+                'price' => 59,
+                'token_price' => 420,
+                'access_level' => 'all',
+                'is_required_for_certification' => true,
+                'duration_hours' => 1,
+                'duration_minutes' => 45,
+                'description' => 'Practical guidance for wastewater containment, reclaim workflows, and documentation.',
+                'thumbnail' => null,
+                'learning_outcomes' => "Understand reclaim workflow\nPrepare field documentation",
+                'has_exam' => true,
+                'passing_score' => 85,
+                'exam_attempts_allowed' => 2,
+                'certificate_name' => 'Environmental Compliance Credential',
+                'lessons_count' => 6,
+                'enrollments' => collect(),
+            ]),
+        ]);
+    }
+
+    public static function paginate(Collection $items, int $perPage = 12, string $pageName = 'page'): LengthAwarePaginator
+    {
+        $page = LengthAwarePaginator::resolveCurrentPage($pageName);
+        $slice = $items->forPage($page, $perPage)->values();
+
+        return new LengthAwarePaginator(
+            $slice,
+            $items->count(),
+            $perPage,
+            $page,
+            [
+                'path' => request()->url(),
+                'query' => request()->query(),
+                'pageName' => $pageName,
+            ],
+        );
+    }
+
+    public static function findBySlug(Collection $items, string $slug): Fluent
+    {
+        $item = $items->firstWhere('slug', $slug);
+
+        abort_if(blank($item), 404);
+
+        return $item;
+    }
+}

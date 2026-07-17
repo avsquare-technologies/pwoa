@@ -1,0 +1,119 @@
+/* Filament Admin Custom Branding & Premium Theme Styles */
+
+/* 1. Inter Font Family Integration */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* 2. Login Page & Simple Page Customization */
+.fi-simple-layout {
+    background: linear-gradient(135deg, #0095d7 0%, #0f172a 100%) !important;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+/* Background grid overlay */
+.fi-simple-layout::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Glassmorphism login card wrapper */
+.fi-simple-layout-ctn {
+    position: relative;
+    z-index: 1;
+}
+
+.fi-simple-card {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 1.5rem !important;
+    padding: 2.5rem !important;
+}
+
+/* Heading styles in Login */
+.fi-simple-card h1 {
+    font-weight: 800 !important;
+    color: #0f172a !important;
+}
+
+/* 3. Custom Button & Form Elements */
+.fi-btn {
+    border-radius: 0.75rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* Primary Button Custom Gradient */
+.fi-btn-color-primary {
+    background: linear-gradient(135deg, #0095d7 0%, #007bb5 100%) !important;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(0, 149, 215, 0.2) !important;
+}
+
+.fi-btn-color-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 16px rgba(0, 149, 215, 0.35) !important;
+}
+
+/* Input wrappers matching PWOA rounded style */
+.fi-input-wrp {
+    border-radius: 0.75rem !important;
+    border: 2px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    transition: all 0.2s ease !important;
+}
+
+.fi-input-wrp:focus-within {
+    border-color: #0095d7 !important;
+    box-shadow: 0 0 0 4px rgba(0, 149, 215, 0.1) !important;
+}
+
+/* 4. Sidebar Custom Styling */
+.fi-sidebar {
+    background: #ffffff !important;
+    border-right: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+.fi-sidebar-item-button {
+    border-radius: 0.75rem !important;
+    transition: all 0.2s ease !important;
+    font-weight: 600 !important;
+}
+
+.fi-sidebar-item-active {
+    background: rgba(0, 149, 215, 0.08) !important;
+    color: #0095d7 !important;
+}
+
+.fi-sidebar-item-active .fi-sidebar-item-icon {
+    color: #0095d7 !important;
+}
+
+/* 5. Header and General Layout Improvements */
+.fi-topbar {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+/* Cards & Widgets Styles */
+.fi-wi-stats-overview-card {
+    border-radius: 1.25rem !important;
+    border: 1px solid rgba(15, 23, 42, 0.05) !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02) !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.fi-wi-stats-overview-card:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05) !important;
+}

@@ -1,0 +1,469 @@
+/* Frontend Specific Styles */
+
+.bg-brand {
+    background: #fff;
+}
+
+.bg-brand-gradient {
+    background: linear-gradient(135deg, var(--ag-primary), #0f172a) !important;
+}
+
+.bg-accent-gradient {
+    background: linear-gradient(135deg, #244a79, var(--ag-primary), #0f172a) !important;
+}
+
+.text-brand {
+    color: var(--ag-primary) !important;
+}
+
+.text-accent {
+    color: var(--ag-secondary) !important;
+}
+
+.btn-brand {
+    background: var(--ag-primary);
+    border-color: var(--ag-primary);
+    color: #fff;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background: var(--ag-primary-dark);
+    border-color: var(--ag-primary-dark);
+    color: #fff;
+}
+
+.btn-accent {
+    background: var(--ag-secondary);
+    border-color: var(--ag-secondary);
+    color: #1e293b;
+    font-weight: 700;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+    background: var(--ag-primary);
+    border-color: var(--ag-primary);
+    color: #fff;
+}
+
+.section-hero {
+    color: #fff;
+    padding: 5rem 0;
+}
+
+.card-soft {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1.5rem rgba(15, 23, 42, .06);
+}
+
+.badge-soft-primary {
+    background: rgba(0, 149, 215, 0.12);
+    color: var(--ag-primary);
+}
+
+.badge-soft-success {
+    background: rgba(34, 197, 94, 0.14);
+    color: #0f7a58;
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, .72);
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: #212529;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--ag-primary);
+    transform: translateY(-1px);
+}
+
+.navbar .nav-link.active {
+    color: var(--ag-secondary);
+    font-weight: 600;
+}
+
+/* Premium Profile Components */
+.business-hero {
+    height: 300px;
+    background: #1e293b;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .business-hero {
+        height: 200px;
+    }
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 1;
+}
+
+.hero-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 100%);
+}
+
+.business-logo-container {
+    width: 130px;
+    height: 130px;
+    border: 3px solid #fff;
+    margin-bottom: -65px;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .business-logo-container {
+        width: 100px;
+        height: 100px;
+        margin-bottom: -50px;
+    }
+}
+
+.profile-header-content {
+    z-index: 10;
+}
+
+.description-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.italic { font-style: italic; }
+.ls-wide { letter-spacing: 0.05em; }
+
+/* ==========================================================================
+   About Page Styles
+   ========================================================================== */
+
+.stats-bar {
+    margin-top: -4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.stat-item {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.feature-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.bg-primary-soft {
+    background: rgba(0, 149, 215, 0.1);
+    color: var(--ag-primary);
+}
+
+.bg-secondary-soft {
+    background: rgba(140, 198, 63, 0.1);
+    color: var(--ag-secondary);
+}
+
+.bg-accent-soft {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--ag-accent);
+}
+
+.image-card-shadow {
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-item .bi-check-circle-fill {
+    font-size: 1.25rem;
+    color: var(--ag-success);
+    margin-right: 1rem;
+    margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Home Page Styles
+   ========================================================================== */
+
+.home-hero {
+    position: relative;
+    padding: 10rem 0 12rem 0;
+    background: url('../images/frontend/home_hero_bg.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    overflow: hidden;
+}
+
+.home-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(0, 149, 215, 0.7) 100%);
+    z-index: 1;
+}
+
+.home-hero>.container {
+    position: relative;
+    z-index: 2;
+}
+
+.floating-directories {
+    margin-top: -6rem;
+    position: relative;
+    z-index: 10;
+}
+
+.directory-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.directory-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+    border-color: var(--ag-primary);
+}
+
+.membership-card-gold {
+    position: relative;
+    border: 2px solid var(--ag-warning);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.15);
+    transform: scale(1.03);
+    z-index: 2;
+}
+
+@media (max-width: 991.98px) {
+    .membership-card-gold {
+        transform: none !important;
+        margin-top: 0 !important;
+    }
+}
+
+.event-card-img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0;
+    background: var(--ag-ink);
+}
+
+.partner-logo {
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.3s ease;
+    max-height: 50px;
+}
+
+.partner-logo:hover {
+    filter: grayscale(0%) opacity(1);
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.final-cta-section {
+    position: relative;
+    padding: 8rem 0;
+    background: url('../images/frontend/home_cta_bg.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.final-cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85); /* Dark slate overlay */
+    z-index: 1;
+}
+
+.final-cta-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   Footer Styles
+   ========================================================================== */
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+.footer-premium {
+    background-color: var(--ag-ink, #0f172a);
+    position: relative;
+    z-index: 1030; /* Ensure it stacks above sticky elements like cards */
+}
+
+.footer-hover {
+    transition: color 0.2s ease;
+}
+
+.footer-hover:hover {
+    color: var(--ag-primary) !important;
+}
+
+.footer-social-icon {
+    width: 36px;
+    height: 36px;
+    transition: all 0.3s ease;
+}
+
+.footer-social-icon:hover {
+    background-color: var(--ag-primary) !important;
+    color: white !important;
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   Compliance Page Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Tokenomics Page Styles
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Inner Page Hero Component (Standardized)
+   ========================================================================== */
+
+.inner-page-hero {
+    position: relative;
+    padding: 4rem 0 5rem 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    color: #fff;
+    overflow: hidden;
+}
+
+.inner-page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(0, 149, 215, 0.7) 100%);
+    z-index: 1;
+}
+
+.inner-page-hero > .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Responsive Typography */
+@media (max-width: 576px) {
+    .display-1 { font-size: 2.5rem; }
+    .display-2 { font-size: 2.25rem; }
+    .display-3 { font-size: 2rem; }
+    .display-4 { font-size: 1.75rem; }
+    .display-5 { font-size: 1.5rem; }
+    .display-6 { font-size: 1.25rem; }
+    
+    .section-hero {
+        padding: 3rem 0;
+    }
+    
+    .home-hero {
+        padding: 6rem 0 8rem 0;
+    }
+    
+    .floating-directories {
+        margin-top: -4rem;
+    }
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .text-md-center { text-align: center !important; }
+    .flex-md-column { flex-direction: column !important; }
+}
+
+.hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: translateY(-5px);
+}
+
+/* Background Image Modifiers */
+.bg-hero-about { background-image: url('../images/frontend/about_hero_bg.png'); }
+.bg-hero-compliance { background-image: url('../images/frontend/compliance_hero.png'); }
+.bg-hero-tokenomics { background-image: url('../images/frontend/tokenomics_hero.png'); }
+.bg-hero-contact { background-image: url('../images/frontend/contact_hero.png'); }
+/* Global Responsive Fixes */
+.form-select, .form-control {
+    max-width: 100%;
+}
+
+@media (max-width: 375px) {
+    .container, .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .card-body {
+        padding: 1.25rem !important;
+    }
+}
+
+/* Focus Ring Utility */
+.focus-ring:focus {
+    background-color: #fff !important;
+    border-color: var(--ag-primary) !important;
+    box-shadow: 0 0 0 4px rgba(0, 149, 215, 0.1) !important;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+
+

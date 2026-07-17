@@ -1,0 +1,10 @@
+.git
+.gitignore
+.env
+/node_modules
+/vendor
+/storage
+/public/hot
+/public/storage
+*.zip
+docker-compose.yml
